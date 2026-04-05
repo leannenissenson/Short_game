@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int quiz_numbers(int answer, int redos, char question[], int answers[], int len) {
-    printf("%s\n ", question);
+    printf("%s\n", question);
 
     int i=1;
 
@@ -43,7 +43,7 @@ int quiz_numbers(int answer, int redos, char question[], int answers[], int len)
 }
 
 int quiz_strings(int answer, int redos, char question[], char answers[5][16], int len) {
-    printf("%s\n ", question);
+    printf("%s\n", question);
     int i=1;
 
     while (i<=len) {
