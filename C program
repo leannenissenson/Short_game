@@ -42,6 +42,12 @@ int quiz_numbers(int answer, int redos, char question[], int answers[], int len)
     return 0;
 }
 
+
+
+
+
+
+
 int quiz_strings(int answer, int redos, char question[], char answers[5][16], int len) {
     printf("%s\n", question);
     int i=1;
@@ -84,7 +90,9 @@ int quiz_strings(int answer, int redos, char question[], char answers[5][16], in
 }
 
 int assign_string(int index, char array[5][16], char string[], int len, int size_string) {
+
     int i=0;
+
     while (i<len) {
         if (i<=size_string) {
             array[index][i]=string[i];
@@ -99,6 +107,33 @@ int assign_string(int index, char array[5][16], char string[], int len, int size
 
     return 0;
 }
+
+int strlen(const char string[]) {
+    size_t n =0;
+
+    while ( string[n] != '\0' ) ++n;
+
+    return n;
+}
+
+int assign_strings(char string[], char string2[], char string3[], char string4[], char string5[], char array[5][16]) {
+    assign_string(0, array, string, 16, strlen(string));
+
+    assign_string(1, array, string2, 16, strlen(string2));
+    assign_string(2, array, string3, 16, strlen(string3));
+    assign_string(3, array, string4, 16, strlen(string4));
+    assign_string(4, array, string5, 16, strlen(string5));
+
+    return 0;
+
+
+}
+
+
+
+
+
+
 
 int main(void) {
     char name[16];
@@ -154,7 +189,14 @@ int main(void) {
 
     quiz_strings(3, 1, question2, names, 5);
 
+    int answers2[5]={1904380332,1290384380,12345,7,2345};
+
+    quiz_numbers(4, 0, "Which of the following is a prime?", answers2, 5);
+
+    printf("Goodbye %s!", name);
+
 
 
     return 0;
 }
+
